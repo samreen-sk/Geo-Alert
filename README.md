@@ -6,6 +6,7 @@ A data-driven machine learning solution to predict landslide-prone regions using
 # Problem Statement
 
 Landslides are severe natural disasters that cause widespread destruction, loss of life, and economic damage.
+
 Our goal is to analyze multi-source environmental and geological data to **predict landslide risk** with high accuracy, enabling **early warnings** and **disaster mitigation**.
 
 
