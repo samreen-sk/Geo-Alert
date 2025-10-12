@@ -98,10 +98,10 @@ Our solution is deployed on IBM Z / LinuxONE, taking advantage of:
 
 # Outcome
 
-✅ Accurate and interpretable landslide prediction model
-✅ Real-time, ready-for-deployment application
-✅ Scalable on enterprise infrastructure
-✅ Supports disaster prevention, urban safety, and environmental monitoring
+✅ Accurate and interpretable landslide prediction model \n
+✅ Real-time, ready-for-deployment application \n
+✅ Scalable on enterprise infrastructure \n 
+✅ Supports disaster prevention, urban safety, and environmental monitoring \n
 
 
 # Future Enhancements
