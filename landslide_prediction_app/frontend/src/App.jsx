@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 
 const App = () => {
-  // 🌧️ Only key input fields from the user, initialized empty
   const [formValues, setFormValues] = useState({
     Rainfall_7Day: "",
     Aspect: "",
@@ -14,10 +13,8 @@ const App = () => {
     Historical_Landslide_Count: "",
   });
 
-  // ⚙️ State for prediction result
   const [carbonRisk, setCarbonRisk] = useState("Predicted Landslide Risk: -");
 
-  // 🧮 Handle input change
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormValues((prevValues) => ({
@@ -26,17 +23,14 @@ const App = () => {
     }));
   };
 
-  // 🔹 Map regressor output to Low/Medium/High
-  const getRiskLevel = (value) => {
-    if (value >= 0.7) return "High";
-    if (value >= 0.4) return "Medium";
-    return "Low";
+  // ✅ Convert regression output (0–1) → Yes / No
+  const getRiskDecision = (value) => {
+    if (value >= 0.5) return "YES (Landslide Likely)";
+    return "NO (Landslide Not Likely)";
   };
 
-  // 🚀 Handle prediction
   const handlePredict = async () => {
     try {
-      // 📝 Create full feature object with defaults for remaining features
       const fullFeatures = {
         Rainfall_mm: "100",
         Rainfall_3Day: "50",
@@ -81,10 +75,8 @@ const App = () => {
 
       if (response.ok) {
         const regValue = result.rf_reg_prediction[0]; // e.g., 0.18
-        const level = getRiskLevel(regValue);
-        setCarbonRisk(
-          `Estimated Carbon Risk: ${(regValue * 100).toFixed(0)}% (${level})`
-        );
+        const decision = getRiskDecision(regValue);
+        setCarbonRisk(`Predicted Landslide: ${decision}`);
       } else {
         alert(`Prediction failed: ${result.error || "Server error"}`);
       }
@@ -102,8 +94,7 @@ const App = () => {
         </div>
         <div className="header-center-group">
           <div className="ibm-datathon-text">IBM DATATHON 2025</div>
-          <div className="landslide-prediction-title">Landslide Prediction System</div>
-          <div className="subtitle">Estimate landslide risk in coastal and marine ecosystems</div>
+          <div className="landslide-prediction-title">GEOALERT - Landslide Prediction System</div>
         </div>
         <div className="header-right-group">
           <div className="team-info">Team NEXORA</div>
@@ -113,88 +104,29 @@ const App = () => {
 
       <main className="main-content">
         <div className="card">
-          <h2 className="card-title">Enter Key Site Parameters</h2>
+          <h2 className="card-title">Enter Key Parameters</h2>
           <div className="form-grid">
-            <div className="form-group">
-              <label htmlFor="Rainfall_7Day">Rainfall_7Day (mm)</label>
-              <input
-                type="text"
-                id="Rainfall_7Day"
-                value={formValues.Rainfall_7Day}
-                onChange={handleChange}
-                placeholder="e.g., 120"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Aspect">Aspect (degrees)</label>
-              <input
-                type="text"
-                id="Aspect"
-                value={formValues.Aspect}
-                onChange={handleChange}
-                placeholder="e.g., 180"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Elevation_m">Elevation (m)</label>
-              <input
-                type="text"
-                id="Elevation_m"
-                value={formValues.Elevation_m}
-                onChange={handleChange}
-                placeholder="e.g., 450"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Soil_Moisture_Content">Soil Moisture Content (%)</label>
-              <input
-                type="text"
-                id="Soil_Moisture_Content"
-                value={formValues.Soil_Moisture_Content}
-                onChange={handleChange}
-                placeholder="e.g., 30"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Soil_Erosion_Rate">Soil Erosion Rate</label>
-              <input
-                type="text"
-                id="Soil_Erosion_Rate"
-                value={formValues.Soil_Erosion_Rate}
-                onChange={handleChange}
-                placeholder="e.g., 0.3"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="NDVI_Index">NDVI Index</label>
-              <input
-                type="text"
-                id="NDVI_Index"
-                value={formValues.NDVI_Index}
-                onChange={handleChange}
-                placeholder="e.g., 0.65"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Soil_Type_Clay">Soil Type Clay (0/1)</label>
-              <input
-                type="text"
-                id="Soil_Type_Clay"
-                value={formValues.Soil_Type_Clay}
-                onChange={handleChange}
-                placeholder="0 or 1"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Historical_Landslide_Count">Historical Landslide Count</label>
-              <input
-                type="text"
-                id="Historical_Landslide_Count"
-                value={formValues.Historical_Landslide_Count}
-                onChange={handleChange}
-                placeholder="e.g., 0"
-              />
-            </div>
+            {[
+              { id: "Rainfall_7Day", label: "Rainfall_7Day (mm)", placeholder: "e.g., 120" },
+              { id: "Aspect", label: "Aspect (degrees)", placeholder: "e.g., 180" },
+              { id: "Elevation_m", label: "Elevation (m)", placeholder: "e.g., 450" },
+              { id: "Soil_Moisture_Content", label: "Soil Moisture Content (%)", placeholder: "e.g., 30" },
+              { id: "Soil_Erosion_Rate", label: "Soil Erosion Rate", placeholder: "e.g., 0.3" },
+              { id: "NDVI_Index", label: "NDVI Index", placeholder: "e.g., 0.65" },
+              { id: "Soil_Type_Clay", label: "Soil Type Clay (0/1)", placeholder: "0 or 1" },
+              { id: "Historical_Landslide_Count", label: "Historical Landslide Count", placeholder: "e.g., 0" },
+            ].map((field) => (
+              <div key={field.id} className="form-group">
+                <label htmlFor={field.id}>{field.label}</label>
+                <input
+                  type="text"
+                  id={field.id}
+                  value={formValues[field.id]}
+                  onChange={handleChange}
+                  placeholder={field.placeholder}
+                />
+              </div>
+            ))}
           </div>
 
           <button className="predict-button" onClick={handlePredict}>
@@ -202,7 +134,6 @@ const App = () => {
           </button>
         </div>
 
-        {/* 📊 Prediction Result */}
         <div className="carbon-risk-section">
           <h3>{carbonRisk}</h3>
         </div>

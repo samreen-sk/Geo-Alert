@@ -19,7 +19,7 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 15px 40px;
-  background: rgba(60, 113, 153, 0.962); /* bluish transparency */
+  background: rgba(18, 152, 103, 0.962); /* bluish transparency */
   border-bottom: 1px solid rgba(173, 216, 230, 0.3); /* light blue border */
 }
 
@@ -90,7 +90,6 @@
   font-size: 1.6em;
   font-weight: 700;
   color: #f4f6f7; /* Deep sky blue */
-  text-shadow: 0 0 10px rgba(225, 226, 226, 0.8);
   letter-spacing: 1px;
 }
 
@@ -110,7 +109,7 @@
 
 .card {
   /* --- CARD TRANSPARENCY AND COLOR --- */
-  background-color: rgba(39, 128, 172, 0.85); /* Dark blue-green, semi-transparent */
+  background-color: rgba(18, 152, 103, 0.962); /* Dark blue-green, semi-transparent */
   border-radius: 12px;
   padding: 30px 40px;
   box-shadow: 0 10px 30px rgba(36, 105, 146, 0.5);
@@ -187,7 +186,7 @@
 
 /* Estimated Risk Section */
 .carbon-risk-section {
-  background-color: rgba(56, 139, 180, 0.85); /* Same as card */
+  background-color: rgba(18, 152, 103, 0.962); /* Same as card */
   border-radius: 12px;
   padding: 20px 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
