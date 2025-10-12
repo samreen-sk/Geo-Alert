@@ -120,6 +120,8 @@ Our solution is deployed on IBM Z / LinuxONE, taking advantage of:
 3. Scalable on enterprise infrastructure
 4. Supports disaster prevention, urban safety, and environmental monitoring 
 
+## Demo
+![WhatsApp Image 2025-10-12 at 14 13 14_59cad0b1](https://github.com/user-attachments/assets/26f9acff-8846-48bd-a561-8df7c6cd78bf)
 
 # Future Enhancements
 * Integrate satellite imagery (CNN model) for image-based terrain risk detection
