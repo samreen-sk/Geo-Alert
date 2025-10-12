@@ -126,4 +126,15 @@ Our solution is deployed on IBM Z / LinuxONE, taking advantage of:
 * Add real-time IoT sensor data (rainfall, soil moisture) for live updates
 * Build interactive GIS dashboard with live alerts
 
+# Team
+**Team Name: NEXORA**
+**Event:** IBM Z Datathon 2025
+NEXORA is a team of six data enthusiasts passionate about applying machine learning and geospatial analytics to solve real-world environmental challenges. Our collective goal is to build scalable, intelligent, and reliable systems that contribute to early disaster prediction and prevention.
+
 # Contributors
+* Shaik Samreen – Lead ML Engineer & Data Science Expert
+* Akshara C – Full Stack Developer (API Development & Integration)
+* Swathi S – Full Stack Developer (API Development & Integration)
+* Arshitha MS – Frontend & UI/UX Designer
+* Akshaya S K – Documentation Lead & Data Curator
+* Pavithra P – Documentation Lead & Feature Evaluator
