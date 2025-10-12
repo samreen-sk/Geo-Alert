@@ -17,6 +17,8 @@ Use **data-driven ML models** to analyze critical factors such as rainfall, elev
 # Dataset Overview
 
 The project uses **32 key attributes** from environmental, geological, and meteorological sources.
+
+
 These datasets form the foundation for accurate prediction and pattern discovery.
 
 ## Key Feature Categories:
@@ -98,10 +100,10 @@ Our solution is deployed on IBM Z / LinuxONE, taking advantage of:
 
 # Outcome
 
-✅ Accurate and interpretable landslide prediction model 
-✅ Real-time, ready-for-deployment application 
-✅ Scalable on enterprise infrastructure 
-✅ Supports disaster prevention, urban safety, and environmental monitoring \n
+1. Accurate and interpretable landslide prediction model
+2.  Real-time, ready-for-deployment application
+3.   Scalable on enterprise infrastructure
+4.    Supports disaster prevention, urban safety, and environmental monitoring 
 
 
 # Future Enhancements
