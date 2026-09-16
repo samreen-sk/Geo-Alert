@@ -134,9 +134,11 @@ Our solution is deployed on IBM Z / LinuxONE, taking advantage of:
 NEXORA is a team of six data enthusiasts passionate about applying machine learning and geospatial analytics to solve real-world environmental challenges. Our collective goal is to build scalable, intelligent, and reliable systems that contribute to early disaster prediction and prevention.
 
 # Contributors
-* Shaik Samreen – Lead ML Engineer & Data Science Expert
-* Akshara C – Full Stack Developer (API Development & Integration)
+* Shaik Samreen – Full Stack Developer (API Development & Integration)
+* Akshara C – Lead ML Engineer & Data Science Expert
 * Swathi S – Full Stack Developer (API Development & Integration)
 * Arshitha MS – Frontend & UI/UX Designer
 * Akshaya S K – Documentation Lead & Data Curator
 * Pavithra P – Documentation Lead & Feature Evaluator
+
+
